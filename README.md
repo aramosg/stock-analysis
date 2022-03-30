@@ -1,7 +1,7 @@
-# Kickstarting with Excel
+# Module 2 - Excel VBA - Stock Analysis with VBA
 
 ## Overview of Project
-Type here the overiew of the Project
+The purpose of this project is to analyze a set of data containing 
 
 ### Purpose
 Type here the purpose of the Project
@@ -27,3 +27,5 @@ TEXT HERE
 ### Q3
 
 ### Q4
+
+## Summary
