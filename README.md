@@ -5,7 +5,7 @@ The purpose of this project is to analyze a set of data, representing the histor
 
 We have been given a piece of VBA code that we need to refactor to perform the task described above. By refactoring this code, we will be able to:
 1. Optimize the performance of our Excel file
-2. Discover what are the best options (stocks) for our customers
+2. Discovering what are the best options (stocks) for our customers
 
 By the end of this Project, we will learn:
 1. The best stocks for investing
@@ -15,11 +15,11 @@ By the end of this Project, we will learn:
 ## Analysis and results
 
 ### Analysis 
-When we start analyzing this data set, we built a first version of our code to read throght the whole set of records. For our 12 stocks, we are talking about:
+When we start analyzing this data set, we built a first version of our code to read through the whole set of records. For our 12 stocks, we are talking about:
 1. Year 2017 - 3,012 records
 2. Year 2018 - 3,012 records
 
-The first version of our code was iterating the whole data set, once per ticker (stock symbol). That is equivalent to have a data set of 36,144 records (3,012 records x 12 tickers). Although the first iteration of our code was doing its job, it was not very efficient. There should be a way to de a better job.
+The first version of our code was iterating the whole data set once per ticker (stock symbol). That is equivalent to have a data set of 36,144 records (3,012 records x 12 tickers). Although the first version of our code was doing its job, it was not very efficient. There should be a way to de a better job.
 
 ### Results for first version of our code
 Running our code for the 12 stocks, year 2017, took 0.5234 seconds to complete the analysis:
@@ -31,8 +31,8 @@ The same unrefactored version, for year 2018, took 0.7382 seconds to complete th
 ### Results for the second version (refactored) version of our code
 What we did to improve the efficiency of our code, was the following:
 1. We created a set of data structures to hold the results of our analysis: an array to hold the tickers, a second array to hold the volumes, a third one to hold the initial prices, and a third one to store the closing prices. 
-2. We ran through the data set only once - we were able to detect a change in the ticker by analyzing the data in the next and previous rows. This way, we knew if it was necessary to change our point to a different stock ticker. 
-3. By the end of the execution, the needed information was stored in the four arrays we created. it was only a matter of printing out the results.
+2. We ran through the data set only once - we were able to detect a change in the ticker by analyzing the data in the next and previous rows. This way, we knew if it was necessary to change our pointer to a different stock ticker. 
+3. By the end of the execution, the needed information was stored in the four arrays we created. it was only a matter of printing out the results. 
 
 By doing these tweaks, we were able to dramatically increase the efficiency of our code. Now, instead of iterating the data set 12 times, only one iteration was enough. 
 
@@ -43,9 +43,9 @@ The execution time for the 2018 analysis was reduced to 0.1445 seconds. That is 
 ![Stock analysis for 2017 - second version (refactored)](/resources/VBA_Challenge_2018.png)
 
 ### Assumptions
-I notice a couple of "things" that are worth mentioning:
+I notice a couple of issues I found and I think are worth mentioning:
 1. The code is assuming the records are grouped by ticker. This code would not work if the data set was not grouped this way.
-2. The code is asusming the records are ordered by date (increasing), additionally to the grouping y ticker. This code would not work if this condition is not met. 
+2. The code is assuming the records are ordered by date (increasing), additionally to the grouping by ticker. This code would not work if this condition is not met. 
 3. The code is assuming that we would be finding the same 12 tickers for all years. If new tickers are introduced, the code would not work.
 
 ## Summary and conclusion
@@ -59,9 +59,9 @@ It really depends on the experience of each individual. It also has to do with e
 ### How do these pros and cons apply to refactoring the original VBA script?
 - Advantage 1 (re-usability) - We were able to utilize a piece of code that was partially complete. We just addedd a few lines to make it work. This helped us to save time and not desinging a new solution from scratch.
 - Advantage 2 (Efficiency) - Adpating this code to our needs was quick.
-- Disadvantage 1 (not well documented code) - This particular issue was not found. The code we needed to refactor was fully documented and easy to understand. But if otherwise, we would have to invest some time in reading the code and fully document it. 
+- Disadvantage 1 (not well documented code) - This particular issue was not found. The code we needed to refactor was fully documented and easy to understand. But if otherwise, we would have to invest a good amount of time in reading the code and fully document it. 
 - Disadvantage 2 (working code) - This issue was not present either. First, the code was well documented, so we knew from the beginnnig how it works. But, the code was not complete. We needed to complete the code in order to make it work.
 
-In conclusion, refactoring is a good practice if we follow some quality standards. It is not about getting code that works (from anyhwere) as long as it works. We need to take time to fully understand it and document it to have a successful project. 
+In conclusion, refactoring is a good practice if we follow some quality standards. It is not about getting code that works (from anyhwere) and get a piece of working software. We need to take time to fully understand it and document it to have a successful project. 
 
 Also, we have learned that code can be improved to be more efficient. That is always an objective when creating (or refactoring) new applications. We must find alternative to our proposed solutions. Working as a team will have this effect. 
