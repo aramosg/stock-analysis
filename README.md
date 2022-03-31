@@ -42,6 +42,12 @@ The execution time for the 2017 analysis was reduced to 0.125 seconds. That is a
 The execution time for the 2018 analysis was reduced to 0.1445 seconds. That is a 19% time reduction. This is also a good improvement. 
 ![Stock analysis for 2017 - second version (refactored)](/resources/VBA_Challenge_2018.png)
 
+### Assumptions
+I notice a couple of "things" that are worth mentioning:
+1. The code is assuming the records are grouped by ticker. This code would not work if the data set was not grouped this way.
+2. The code is asusming the records are ordered by date (increasing), additionally to the grouping y ticker. This code would not work if this condition is not met. 
+3. The code is assuming that we would be finding the same 12 tickers for all years. If new tickers are introduced, the code would not work.
+
 ## Summary and conclusion
 ### What are the advantages or disadvantages of refactoring code?
 It really depends on the experience of each individual. It also has to do with every person's programming style. From my experience, I can tell that:
@@ -56,4 +62,6 @@ It really depends on the experience of each individual. It also has to do with e
 - Disadvantage 1 (not well documented code) - This particular issue was not found. The code we needed to refactor was fully documented and easy to understand. But if otherwise, we would have to invest some time in reading the code and fully document it. 
 - Disadvantage 2 (working code) - This issue was not present either. First, the code was well documented, so we knew from the beginnnig how it works. But, the code was not complete. We needed to complete the code in order to make it work.
 
+In conclusion, refactoring is a good practice if we follow some quality standards. It is not about getting code that works (from anyhwere) as long as it works. We need to take time to fully understand it and document it to have a successful project. 
 
+Also, we have learned that code can be improved to be more efficient. That is always an objective when creating (or refactoring) new applications. We must find alternative to our proposed solutions. Working as a team will have this effect. 
